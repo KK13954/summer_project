@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>夏課題プロトタイプ</title>
+  <link rel="stylesheet" href="mapstyle2.css">
+  <!-- Google Maps JavaScript API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtvTmZ64n7gEo4rgAJuVoLtWElaG28Ohw" async defer></script>
+</head>
+<body>
+<script>
+(function(){
+  
+  let authed = false;
+  while(!authed) {
+    const password = prompt("パスワードを入力してください:");
+    if(password === "iml2025") {
+      authed = true;
+    } else {
+      alert("パスワードが間違っています。再度パスワードを入力してください");
+    }
+  }
+})();
+</script>
+
+  <div id="map"></div>
+
+  <div id="form">
+    <input type="text" id="message" placeholder="投稿内容を入力">
+    <select id="type">
+      <option value="渋滞">渋滞</option>
+      <option value="事故">事故</option>
+      <option value="情報">その他の交通情報</option>
+      <option value="口コミ">口コミ投稿</option>
+    </select>
+    <button id="submit">投稿</button>
+  </div>
+
+  <div id="list"></div>
+
+  <script src="mapscript2.js"></script>
+</body>
+</html>
