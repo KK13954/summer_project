@@ -8,6 +8,21 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtvTmZ64n7gEo4rgAJuVoLtWElaG28Ohw" async defer></script>
 </head>
 <body>
+
+<script>
+  // パスワード認証
+  document.addEventListener("DOMContentLoaded", function() {
+    function auth() {
+      const password = prompt("パスワードを入力してください:");
+      if (password !== "iml2025") {
+        alert("パスワードが間違っています。再度パスワードを入力してください");
+        auth(); 
+      }
+    }
+    auth();
+  });
+</script>
+
   <div id="map"></div>
 
   <div id="form">
